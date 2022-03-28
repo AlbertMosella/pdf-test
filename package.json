@@ -1,0 +1,17 @@
+{
+  "name": "foo-reserves-credit",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "serve": "lerna run serve --stream --scope @foo/app",
+    "build": "lerna run build --stream --scope @foo/app",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0",
+    "node-sass": "^6.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
