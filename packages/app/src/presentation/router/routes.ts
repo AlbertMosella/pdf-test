@@ -1,3 +1,3 @@
 export const BASE_ROUTE = '/';
-export const MODULE1_ROUTE = '/module1';
-export const MODULE2_ROUTE = '/module2';
+export const MACHINES_ROUTE = '/machines';
+export const PRODUCTS_ROUTE = '/products';

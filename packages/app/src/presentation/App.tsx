@@ -9,8 +9,8 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <header className={styles.header}>FOO HEADER</header>
-      {/* <AppRouter /> */}
+      <header className={styles.header}>APP HEADER</header>
+      {<AppRouter />}
     </div>
   );
 }
