@@ -1,14 +1,15 @@
-import { dummy } from '@foo/core';
-import './App.scss';
+import {dummy} from '@foo/core';
+// @ts-ignore
+import styles from './App.module.scss';
 import React from 'react';
-import { AppRouter } from './router/AppRouter';
+import {AppRouter} from './router/AppRouter';
 
 function App() {
   console.log(dummy);
 
   return (
-    <div className="App">
-      <header className="App-header">FOO HEADER</header>
+    <div className={styles.App}>
+      <header className={styles.header}>FOO HEADER</header>
       {/* <AppRouter /> */}
     </div>
   );
