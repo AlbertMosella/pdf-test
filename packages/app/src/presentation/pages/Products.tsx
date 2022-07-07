@@ -1,9 +1,8 @@
-import React from 'react';
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 export const Products = () => {
-  const history = useHistory();
-  const handleClick = () => history.push('/machines');
+  const navigate = useNavigate();
+  const handleClick = () => navigate('/machines');
   return (
     <div>
       <h3>PRODUCTS</h3>
