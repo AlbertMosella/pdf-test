@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "serve": "lerna run serve --stream --scope @foo/app",
+    "test": "echo no tests implemented",
     "build": "lerna run build --stream --scope @foo/app",
     "preview": "vite preview"
   },
