@@ -6,9 +6,10 @@
     "serve": "lerna run serve --stream --scope @foo/app",
     "test": "echo no tests implemented",
     "build": "lerna run build --stream --scope @foo/app",
+    "prepare": "husky install",
     "preview": "lerna run preview --stream --scope @foo/app",
     "clean": "rimraf node_modules",
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap && yarn prepare"
   },
   "devDependencies": {
     "@uxland/project-tools": "^1.0.1",
