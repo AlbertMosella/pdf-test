@@ -6,11 +6,20 @@
     "serve": "lerna run serve --stream --scope @foo/app",
     "test": "echo no tests implemented",
     "build": "lerna run build --stream --scope @foo/app",
-    "preview": "lerna run preview --stream --scope @foo/app"
+    "prepare": "husky install",
+    "preview": "lerna run preview --stream --scope @foo/app",
+    "clean": "rimraf node_modules",
+    "bootstrap": "lerna bootstrap && yarn prepare"
   },
   "devDependencies": {
+    "@uxland/project-tools": "^1.0.1",
+    "commitlint": "^16.2.4",
+    "eslint-plugin-html": "^6.2.0",
+    "husky": "^7.0.0",
     "lerna": "^4.0.0",
-    "node-sass": "^6.0.0"
+    "lint-staged": "^12.3.7",
+    "node-sass": "^6.0.0",
+    "rimraf": "^3.0.2"
   },
   "workspaces": [
     "packages/*"
