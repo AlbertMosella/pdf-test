@@ -6,25 +6,12 @@
   "homepage": "https://github.com/uxland/react-vite-ts-monorepo.git#readme",
   "license": "ISC",
   "main": "index.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/uxland/react-vite-ts-monorepo.git.git"
   },
   "scripts": {
     "test": "echo \"No test in core\" && exit 0"
-  },
-  "bugs": {
-    "url": "https://github.com/uxland/react-vite-ts-monorepo.git/issues"
   },
   "dependencies": {}
 }

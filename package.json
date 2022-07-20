@@ -9,8 +9,7 @@
     "preview": "lerna run preview --stream --scope @foo/app"
   },
   "devDependencies": {
-    "lerna": "^4.0.0",
-    "node-sass": "^6.0.0"
+    "lerna": "^4.0.0"
   },
   "workspaces": [
     "packages/*"
