@@ -17,7 +17,8 @@
     "build:compile": "yarn env:pro && tsc && vite build",
     "serve-build": "yarn serve -s dist",
     "preview": "vite preview",
-    "serve": "yarn env:local && vite"
+    "serve": "yarn env:local && vite",
+    "test": "echo \"No test in core\" && exit 0"
   },
   "devDependencies": {
     "@types/node": "^16.11.22",
