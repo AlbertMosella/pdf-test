@@ -72,7 +72,7 @@ case "$1" in
     yarn)              TARGET_SERVICE="$APP_SERVICE"; shift 1; set -- yarn "$@";;
     sh)                TARGET_SERVICE="$APP_SERVICE"; shift 1; set -- sh "$@";;
     shell | bash)      TARGET_SERVICE="$APP_SERVICE"; shift 1; set -- bash "$@";;
-    fish)              TARGET_SERVICE="$APP_SERVICE"; shift 1; set -- sh -c "! command -v fish >/dev/null && (apt-get update && apt-get install -y --no-install-recommends fish); exec fish";;
+    fish)              TARGET_SERVICE="$APP_SERVICE"; shift 1; set -- sh -c "! command -v fish >/dev/null && (apt-get update && apt-get install -y --no-install-recommends fish nano); exec fish";;
     git)               TARGET_SERVICE="$APP_SERVICE"; shift 1; set -- git "$@";;
 
     # Pass unknown commands to the Docker Compose binary...
