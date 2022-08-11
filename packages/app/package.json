@@ -11,13 +11,11 @@
     "url": "git+https://github.com/uxland/react-vite-ts-monorepo.git.git"
   },
   "scripts": {
-    "env:local": "ncp .env.development .env",
-    "env:pro": "ncp .env.production .env",
-    "build": "yarn env:pro && vite build",
-    "build:compile": "yarn env:pro && tsc && vite build",
+    "build": "vite build",
+    "build:compile": "tsc && vite build",
     "serve-build": "yarn serve -s dist",
     "preview": "vite preview",
-    "serve": "yarn env:local && vite",
+    "serve": "vite",
     "test": "echo \"No test in core\" && exit 0"
   },
   "devDependencies": {
@@ -25,7 +23,6 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",
-    "ncp": "^2.0.0",
     "node-fetch": "^3.1.0"
   },
   "dependencies": {
