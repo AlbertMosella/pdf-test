@@ -32,8 +32,6 @@ if ! [ -x "$(command -v docker-compose)" ]; then
     DOCKER_COMPOSE="docker compose"
 fi
 
-BYPASS_DOCKER_COMPOSE_TO_RUN_FASTER=0
-
 # Source the ".env" file so environment variables are available...
 if [ -f ./.env ]; then
     . ./.env
@@ -79,27 +77,13 @@ case "$1" in
     *) "$DOCKER_COMPOSE" "$@"; exit 1;;
 esac
 
-# Assemble final command execution call
-if [ "$BYPASS_DOCKER_COMPOSE_TO_RUN_FASTER" = 0 ]; then
-    set -- "$DOCKER_COMPOSE" exec "$TARGET_SERVICE" "$@"
-else
-    TARGET_CONTAINER="$(basename "$(pwd)")_${TARGET_SERVICE}_1"
-    set -- docker exec -it "$TARGET_CONTAINER" "$@"
-fi
-
 # Run the command
-if ! "$@"; then
+if ! "$DOCKER_COMPOSE" exec "$TARGET_SERVICE" "$@"; then
     # If the command failed, check if it was because the service was down,
     # auto-start it, and retry the command
     TARGET_SERVICE_RUNNING=0
-    if [ "$BYPASS_DOCKER_COMPOSE_TO_RUN_FASTER" = 0 ]; then
-        if "$DOCKER_COMPOSE" ps --services --filter "status=running" | grep -Fxq "$TARGET_SERVICE"; then
-            TARGET_SERVICE_RUNNING=1
-        fi
-    else
-        if [ -n "$(docker ps --filter status=running --quiet --filter name="$TARGET_CONTAINER")" ]; then
-          TARGET_SERVICE_RUNNING=1
-        fi
+    if "$DOCKER_COMPOSE" ps --services --filter "status=running" | grep -Fxq "$TARGET_SERVICE"; then
+        TARGET_SERVICE_RUNNING=1
     fi
 
     if [ "$TARGET_SERVICE_RUNNING" -eq 1 ]; then
