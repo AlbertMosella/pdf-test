@@ -91,13 +91,18 @@ fi
 if ! "$@"; then
     # If the command failed, check if it was because the service was down,
     # auto-start it, and retry the command
+    TARGET_SERVICE_RUNNING=0
     if [ "$BYPASS_DOCKER_COMPOSE_TO_RUN_FASTER" = 0 ]; then
-        TARGET_SERVICE_RUNNING="$("$DOCKER_COMPOSE" ps --services --filter "status=running" --quiet "$TARGET_SERVICE")"
+        if "$DOCKER_COMPOSE" ps --services --filter "status=running" | grep -Fxq "$TARGET_SERVICE"; then
+            TARGET_SERVICE_RUNNING=1
+        fi
     else
-        TARGET_SERVICE_RUNNING="$(docker ps --filter status=running --quiet --filter name="$TARGET_CONTAINER")"
+        if [ -n "$(docker ps --filter status=running --quiet --filter name="$TARGET_CONTAINER")" ]; then
+          TARGET_SERVICE_RUNNING=1
+        fi
     fi
 
-    if [ -n "$TARGET_SERVICE_RUNNING" ]; then
+    if [ "$TARGET_SERVICE_RUNNING" -eq 1 ]; then
         exit 1
     fi
 
