@@ -78,7 +78,8 @@ case "$1" in
 esac
 
 # Run the command
-if ! "$DOCKER_COMPOSE" exec "$TARGET_SERVICE" "$@"; then
+set -- "$DOCKER_COMPOSE" exec "$TARGET_SERVICE" "$@"
+if ! "$@"; then
     # If the command failed, check if it was because the service was down,
     # auto-start it, and retry the command
     TARGET_SERVICE_RUNNING=0
