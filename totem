@@ -32,7 +32,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
     DOCKER_COMPOSE="docker compose"
 fi
 
-BYPASS_DOCKER_COMPOSE_TO_RUN_FASTER=1
+BYPASS_DOCKER_COMPOSE_TO_RUN_FASTER=0
 
 # Source the ".env" file so environment variables are available...
 if [ -f ./.env ]; then
