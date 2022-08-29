@@ -24,5 +24,8 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "react-pdf": "^5.7.2"
+  }
 }
