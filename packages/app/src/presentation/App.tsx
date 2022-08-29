@@ -1,7 +1,7 @@
 import {dummy} from '@foo/core';
 // @ts-ignore
 import styles from './App.module.scss';
-import React from 'react';
+
 import {AppRouter} from './router/AppRouter';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <header className={styles.header}>APP HEADER</header>
+      <header className={styles.header}>DOCUMENT VIEWER</header>
       {<AppRouter />}
     </div>
   );

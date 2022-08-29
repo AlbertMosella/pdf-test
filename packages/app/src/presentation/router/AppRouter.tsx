@@ -1,19 +1,23 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import {Machines} from '../pages/Machines';
-import {Products} from '../pages/Products';
-import {MACHINES_ROUTE, PRODUCTS_ROUTE} from './routes';
-import React from 'react';
+import {Route, Routes} from 'react-router-dom';
+import {DocumentsPage} from '../pages/DocumentsPage';
+import {DOCUMENT_VIEWER_ROUTE} from './routes';
+import React, {useState} from 'react';
 import {PageNotFound} from '../pages/PageNotFound';
 
 export const AppRouter = () => {
+  const [showDocument, setShowDocument] = useState(false);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={MACHINES_ROUTE} element={<Machines />} />
-        <Route path="/" element={<Machines />} />
-        <Route path={PRODUCTS_ROUTE} element={<Products />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route
+        path={DOCUMENT_VIEWER_ROUTE}
+        element={<DocumentsPage showDocument={showDocument} setShowDocument={setShowDocument} />}
+      />
+      <Route
+        path="/"
+        element={<DocumentsPage showDocument={showDocument} setShowDocument={setShowDocument} />}
+      />
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
   );
 };

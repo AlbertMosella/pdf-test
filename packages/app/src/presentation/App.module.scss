@@ -1,4 +1,4 @@
-@import './theme/theme.scss';
+@import "./theme/theme.scss";
 
 .App {
   text-align: center;
@@ -9,7 +9,6 @@
   @include layout-horizontal;
   font-size: $uxl-units-size-18;
   color: white;
-
   padding: 16px;
   font-weight: 500;
 }
