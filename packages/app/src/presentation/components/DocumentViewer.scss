@@ -20,5 +20,19 @@ img {
 }
 
 .preview-bar-left {
-  //   display: none;
+  display: none;
+}
+
+.preview-button {
+  width: 35px;
+  height: 35px;
+  margin: 10px;
+  background: rgb(24, 24, 105);
+  color: white;
+  border: none;
+  border-radius: 50%;
+}
+
+.preview-icons {
+  display: none;
 }
