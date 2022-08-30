@@ -27,7 +27,7 @@ export const DocumentViewer = (props: Props): JSX.Element => {
         file={{
           data: props.fileToShow.attach,
           mimeType: props.fileToShow.mimeType,
-          name: props.fileToShow.name, //Nom que tindrà al descarregar
+          name: props.fileToShow.name,
         }}
       />
     </div>
