@@ -1,0 +1,12 @@
+.Documents {
+  .Documents__List {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .Documents__Element {
+      background-color: red;
+      margin: 5px;
+      padding: 10px;
+    }
+  }
+}

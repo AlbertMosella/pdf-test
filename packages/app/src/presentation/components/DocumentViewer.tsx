@@ -1,10 +1,11 @@
 import { useState } from "react";
 // import {Document, Page} from 'react-pdf';
-import { mockPdf, mockPdf2, mockImg } from "../mockFiles/mockFiles";
+import { mockFiles } from "../mockFiles/mockFiles";
 import FilePreViewer from "react-file-previewer";
 import "./DocumentViewer.scss";
 interface Props {
   setShowDocument?: (value: boolean) => void;
+  fileToShow: any;
 }
 
 export const DocumentViewer = (props: Props): JSX.Element => {
@@ -12,34 +13,19 @@ export const DocumentViewer = (props: Props): JSX.Element => {
     props.setShowDocument && props.setShowDocument(false);
   };
 
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
   return (
-    <div className="viewer">
-      <div>Document Viewer</div>
-      <div onClick={handleCloseDocument}>X</div>
-      {/* <Document file="./dummy.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={pageNumber} />
-      </Document>
-      <Document file={mockPdf.attach} onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={pageNumber} />
-      </Document> */}
+    <div className="Viewer">
+      <div className="Viewer__Header">
+        <div>Document Viewer</div>
+        <div className="Viewer__Cross" onClick={handleCloseDocument}>
+          X
+        </div>
+      </div>
       <FilePreViewer
         file={{
-          data: mockImg.attach,
-          mimeType: "image/jpeg",
-          name: "image.jpg",
-        }}
-      />
-      <FilePreViewer
-        file={{
-          data: mockPdf2.attach,
-          mimeType: "application/pdf",
-          name: "docu.pdf",
+          data: props.fileToShow.attach,
+          mimeType: props.fileToShow.mimeType,
+          name: props.fileToShow.name, //Nom que tindrà al descarregar
         }}
       />
     </div>

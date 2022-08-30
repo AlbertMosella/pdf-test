@@ -1,7 +1,24 @@
+.Viewer {
+  border: 1px solid black;
+  margin: 10px;
+  .Viewer__Header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    .Viewer__Cross {
+      cursor: pointer;
+    }
+  }
+}
+
 .react-pdf__Page__textContent {
   color: black !important;
 }
 img {
-  width: 200px !important;
+  width: 400px !important;
   height: 200px !important;
+}
+
+.preview-bar-left {
+  //   display: none;
 }
