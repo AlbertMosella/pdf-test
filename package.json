@@ -26,6 +26,8 @@
     "packages/*"
   ],
   "dependencies": {
-    "react-pdf": "^5.7.2"
+    "react-file-previewer": "^0.6.3",
+    "react-file-previewer-v2": "^0.6.3",
+    "react-file-viewer": "^1.2.1"
   }
 }
