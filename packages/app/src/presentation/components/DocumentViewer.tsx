@@ -17,7 +17,6 @@ export const DocumentViewer = (props: Props): JSX.Element => {
     <div className="Viewer">
       <div className="Viewer__Header">
         <div>Document Viewer</div>
-
         <div className="Viewer__Cross" onClick={handleCloseDocument}>
           X
         </div>
