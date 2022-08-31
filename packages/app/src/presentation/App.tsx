@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <header className={styles.header}>AMAZING DOCUMENT VIEWER</header>
+      <header className={styles.header}>DOCUMENT VIEWER</header>
       {<AppRouter />}
     </div>
   );

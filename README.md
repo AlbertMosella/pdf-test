@@ -1,4 +1,8 @@
-# Scaffolding monorepo project based in React, Vite, TypeScript and SASS
+# Component React per visualitzar arxius en base64 del tipus PDF, IMG i TEXT/HTML
+
+### APUNTS
+
+Els arxius de tipus pdf no es poden visualitzar en dev, només en producció
 
 ### SETUP
 

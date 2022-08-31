@@ -33,6 +33,10 @@ export const DocumentsPage = (props: Props): JSX.Element => {
             );
           })}
         </div>
+        <span>
+          El component permet visualitzar arxius IMG, PDF o text/html. Els
+          arxius PDF només es visualitzen a producció
+        </span>
         {props.showDocument && (
           <DocumentViewer
             fileToShow={fileToShow}

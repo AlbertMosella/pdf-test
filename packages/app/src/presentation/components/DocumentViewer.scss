@@ -26,6 +26,10 @@
   }
 }
 
+.react-pdf__Page__canvas {
+  display: flex;
+}
+
 .preview-bar-left {
   .preview-button:first-child {
     display: none;
