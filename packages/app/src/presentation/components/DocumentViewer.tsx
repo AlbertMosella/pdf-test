@@ -3,6 +3,7 @@ import { useState } from "react";
 import { mockFiles } from "../mockFiles/mockFiles";
 import FilePreViewer from "react-file-previewer";
 import "./DocumentViewer.scss";
+import { CrossIcon } from "./CrossIcon";
 interface Props {
   setShowDocument?: (value: boolean) => void;
   fileToShow: any;
@@ -16,9 +17,9 @@ export const DocumentViewer = (props: Props): JSX.Element => {
   return (
     <div className="Viewer">
       <div className="Viewer__Header">
-        <div>Document Viewer</div>
+        <div className="Viewer__Title">Document Viewer</div>
         <div className="Viewer__Cross" onClick={handleCloseDocument}>
-          X
+          <CrossIcon />
         </div>
       </div>
       <div>{props.fileToShow.name}</div>

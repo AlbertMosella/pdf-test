@@ -2,11 +2,26 @@
   border: 1px solid black;
   margin: 10px;
   .Viewer__Header {
+    background-color: #d4effa;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: #0161a0;
+    font-size: pxToRem(17);
+    font-family: "Montserrat";
+    font-weight: bold;
+    height: 52px;
+    padding: 8px 16px;
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    .Viewer__Title {
+      padding: 20px 8px;
+    }
     .Viewer__Cross {
       cursor: pointer;
+      width: 20px;
+      height: 20px;
+      fill: #0161a0;
+      padding: 20px 8px;
     }
   }
 }
